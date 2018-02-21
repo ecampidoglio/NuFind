@@ -28,6 +28,7 @@ namespace NuFind
                     new PackageMetadata(
                         (string)node.Element(ds + "Id"),
                         (string)node.Element(ds + "Version"),
+                        (string)node.Element(ds + "Authors"),
                         (bool)node.Element(ds + "IsPrerelease")))
                 .OrderBy(node => node.Id);
         }
