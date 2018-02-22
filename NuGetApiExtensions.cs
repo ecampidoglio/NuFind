@@ -29,6 +29,7 @@ namespace NuFind
                         (string)node.Element(ds + "Id"),
                         (string)node.Element(ds + "Version"),
                         (string)node.Element(ds + "Authors"),
+                        (string)node.Element(ds + "Description"),
                         (bool)node.Element(ds + "IsPrerelease")))
                 .OrderBy(node => node.Id);
         }

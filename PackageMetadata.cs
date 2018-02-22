@@ -6,11 +6,13 @@ namespace NuFind
             string id,
             string version,
             string authors,
+            string description,
             bool isPreRelease = false)
         {
             Id = id;
             Version = version;
             Authors = authors;
+            Description = description;
             IsPreRelease = isPreRelease;
         }
 
@@ -19,6 +21,8 @@ namespace NuFind
         public string Version { get; }
 
         public string Authors { get; }
+
+        public string Description { get; }
 
         public bool IsPreRelease { get; }
     }
