@@ -4,7 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Xml.Linq;
 
-namespace NuFind
+namespace NuFind.Extensions
 {
     internal static class NuGetApiExtensions
     {

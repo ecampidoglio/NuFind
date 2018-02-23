@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace NuFind
+namespace NuFind.Extensions
 {
     internal static class OutputExtensions
     {

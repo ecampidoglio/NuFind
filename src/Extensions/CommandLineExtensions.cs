@@ -1,6 +1,6 @@
 using Microsoft.Extensions.CommandLineUtils;
 
-namespace NuFind
+namespace NuFind.Extensions
 {
     internal static class CommandLineExtensions
     {

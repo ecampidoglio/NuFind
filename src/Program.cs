@@ -1,4 +1,6 @@
-﻿namespace NuFind
+﻿using NuFind.Extensions;
+
+namespace NuFind
 {
     public static class Program
     {
