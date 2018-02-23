@@ -37,9 +37,10 @@ namespace NuFind
 
         private static HttpClient NuGetApiClient()
         {
-            var client = new HttpClient();
-            client.BaseAddress = new Uri("https://www.nuget.org/api/v2/");
-            return client;
+            return new HttpClient
+            {
+                BaseAddress = new Uri("https://www.nuget.org/api/v2/")
+            };
         }
 
         private static string ToNuGetSearchQuery(this SearchOptions options)
