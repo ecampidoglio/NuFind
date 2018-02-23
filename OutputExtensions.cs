@@ -14,7 +14,10 @@ namespace NuFind
                 Console.Write(package.Id);
                 Console.Write(" → ");
                 Console.ForegroundColor = package.IsPreRelease ? ConsoleColor.Red : ConsoleColor.Green;
-                Console.WriteLine(package.Version);
+                Console.Write(package.Version);
+                Console.ForegroundColor = ConsoleColor.DarkGray;
+                Console.Write($" ({package.Authors})");
+                Console.WriteLine();
                 Console.ResetColor();
             }
         }
