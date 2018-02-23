@@ -1,3 +1,5 @@
+using System;
+
 namespace NuFind
 {
     internal struct PackageMetadata
@@ -7,12 +9,14 @@ namespace NuFind
             string version,
             string authors,
             string description,
+            Uri galleryUrl,
             bool isPreRelease = false)
         {
             Id = id;
             Version = version;
             Authors = authors;
             Description = description;
+            GalleryUrl = galleryUrl;
             IsPreRelease = isPreRelease;
         }
 
@@ -23,6 +27,8 @@ namespace NuFind
         public string Authors { get; }
 
         public string Description { get; }
+
+        public Uri GalleryUrl { get; }
 
         public bool IsPreRelease { get; }
     }
