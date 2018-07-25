@@ -29,7 +29,7 @@ namespace NuFind.Extensions
                 items = packages.Select(p => new
                 {
                     title = p.Id,
-                    subtitle = p.Version,
+                    subtitle = $"{p.Version} • {p.Authors}",
                     arg = $"\"{p.Id}\": \"{p.Version}\"",
                     autocomplete = p.Id,
                     icon = new {
