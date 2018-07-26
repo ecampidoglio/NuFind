@@ -30,7 +30,7 @@ namespace NuFind.Extensions
                 {
                     title = p.Id,
                     subtitle = $"{p.Version} • {p.Authors}",
-                    arg = $"\"{p.Id}\": \"{p.Version}\"",
+                    arg = $"<PackageReference Include=\"{p.Id}\" Version=\"{p.Version}\" />",
                     autocomplete = p.Id,
                     icon = new {
                         path = "icon.png"
