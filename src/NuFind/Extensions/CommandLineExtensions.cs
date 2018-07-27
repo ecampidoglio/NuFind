@@ -2,9 +2,9 @@ using Microsoft.Extensions.CommandLineUtils;
 
 namespace NuFind.Extensions
 {
-    internal static class CommandLineExtensions
+    public static class CommandLineExtensions
     {
-        internal static SearchOptions ParseSearchOptions(this string[] args)
+        public static SearchOptions ParseSearchOptions(this string[] args)
         {
             var options = new CommandLineApplication();
 

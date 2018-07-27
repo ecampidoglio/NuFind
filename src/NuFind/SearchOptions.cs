@@ -1,6 +1,6 @@
 namespace NuFind
 {
-    internal struct SearchOptions
+    public struct SearchOptions
     {
         public SearchOptions(string searchTerm, bool includePreRelease)
         {
