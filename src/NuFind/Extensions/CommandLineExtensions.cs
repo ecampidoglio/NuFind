@@ -1,34 +1,23 @@
 using System;
-using Microsoft.Extensions.CommandLineUtils;
+using System.Collections.Generic;
+using CommandLine;
 
 namespace NuFind.Extensions
 {
     public static class CommandLineExtensions
     {
-        public static SearchOptions ParseSearchOptions(this string[] args)
+        public static SearchOptions ParseSearchOptions(
+            this IEnumerable<string> args)
         {
-            var options = new CommandLineApplication();
+            var result = Parser.Default.ParseArguments<SearchOptions>(args);
 
-            var searchTerm = options.Argument(
-                "searchTerm",
-                "The term to search for in the NuGet Gallery.");
-            var includePrerelease = options.Option(
-                "-p | --prerelease",
-                "Indicates whether to include pre-release versions of the package.",
-                CommandOptionType.NoValue);
-            options.HelpOption("-h | --help");
-
-            try
+            switch (result)
             {
-                options.Execute(args);
-
-                return new SearchOptions(
-                    searchTerm.Value,
-                    includePrerelease.HasValue());
-            }
-            catch (CommandParsingException e)
-            {
-                throw new ArgumentException(e.Message);
+                case Parsed<SearchOptions> options:
+                    return options.Value;
+                case NotParsed<SearchOptions> options:
+                    throw new ArgumentException(string.Join("\\n", options.Errors));
+                default: return default(SearchOptions);
             }
         }
     }

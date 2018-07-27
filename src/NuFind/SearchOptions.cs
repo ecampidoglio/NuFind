@@ -1,15 +1,16 @@
+using CommandLine;
+
 namespace NuFind
 {
-    public struct SearchOptions
+    public class SearchOptions
     {
-        public SearchOptions(string searchTerm, bool includePreRelease)
-        {
-            SearchTerm = searchTerm;
-            IncludePreRelease = includePreRelease;
-        }
+        [Value(0,
+            Required = true,
+            HelpText = "The term to search for in the NuGet Gallery.")]
+        public string SearchTerm { get; set; }
 
-        public string SearchTerm { get; }
-
-        public bool IncludePreRelease { get; }
+        [Option('p', "prerelease",
+            HelpText = "Indicates whether to include pre-release versions of the package.")]
+        public bool IncludePreRelease { get; set; }
     }
 }
