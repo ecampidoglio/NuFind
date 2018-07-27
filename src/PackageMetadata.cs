@@ -9,6 +9,7 @@ namespace NuFind
             string version,
             string authors,
             string description,
+            Uri iconUrl,
             Uri galleryUrl,
             bool isPreRelease = false)
         {
@@ -16,6 +17,7 @@ namespace NuFind
             Version = version;
             Authors = authors;
             Description = description;
+            IconUrl = iconUrl;
             GalleryUrl = galleryUrl;
             IsPreRelease = isPreRelease;
         }
@@ -27,6 +29,8 @@ namespace NuFind
         public string Authors { get; }
 
         public string Description { get; }
+
+        public Uri IconUrl { get; }
 
         public Uri GalleryUrl { get; }
 

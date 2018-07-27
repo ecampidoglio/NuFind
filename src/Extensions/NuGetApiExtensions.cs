@@ -30,6 +30,7 @@ namespace NuFind.Extensions
                         (string)node.Element(ds + "Version"),
                         (string)node.Element(ds + "Authors"),
                         (string)node.Element(ds + "Description"),
+                        new Uri((string)node.Element(ds + "IconUrl")),
                         new Uri((string)node.Element(ds + "GalleryDetailsUrl")),
                         (bool)node.Element(ds + "IsPrerelease")))
                 .OrderBy(node => node.Id);
