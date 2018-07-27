@@ -1,5 +1,4 @@
 using FluentAssertions;
-using NuFind.Extensions;
 using Xunit;
 
 namespace NuFind.Tests.SearchOptionsTests
@@ -9,7 +8,7 @@ namespace NuFind.Tests.SearchOptionsTests
         [Fact]
         public void Should_parse_a_single_word_as_the_search_term_argument()
         {
-            var result = new[] {"word"}.ParseSearchOptions();
+            var result = SearchOptions.Parse(new[] {"word"});
 
             result.SearchTerm.Should().Be("word");
         }
@@ -17,7 +16,7 @@ namespace NuFind.Tests.SearchOptionsTests
         [Fact]
         public void Should_parse_multiple_words_as_the_search_term_argument()
         {
-            var result = new[] {"two words"}.ParseSearchOptions();
+            var result = SearchOptions.Parse(new[] {"two words"});
 
             result.SearchTerm.Should().Be("two words");
         }
@@ -27,7 +26,7 @@ namespace NuFind.Tests.SearchOptionsTests
         [InlineData("--prerelease")]
         public void Should_parse_the_prerelease_option(string option)
         {
-            var result = new[] {"word", option}.ParseSearchOptions();
+            var result = SearchOptions.Parse(new[] {"word", option});
 
             result.IncludePreRelease.Should().BeTrue();
         }

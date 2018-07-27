@@ -1,6 +1,5 @@
 using System;
 using FluentAssertions;
-using NuFind.Extensions;
 using Xunit;
 
 namespace NuFind.Tests.SearchOptionsTests
@@ -13,7 +12,7 @@ namespace NuFind.Tests.SearchOptionsTests
         public void Should_throw_an_argument_exception(
             string option)
         {
-            Action act = () => new[] {option}.ParseSearchOptions();
+            Action act = () => SearchOptions.Parse(new[] {option});
 
             act.Should().Throw<ArgumentException>();
         }
