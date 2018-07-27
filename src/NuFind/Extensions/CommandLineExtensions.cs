@@ -1,3 +1,4 @@
+using System;
 using Microsoft.Extensions.CommandLineUtils;
 
 namespace NuFind.Extensions
@@ -17,11 +18,18 @@ namespace NuFind.Extensions
                 CommandOptionType.NoValue);
             options.HelpOption("-h | --help");
 
-            options.Execute(args);
+            try
+            {
+                options.Execute(args);
 
-            return new SearchOptions(
-                searchTerm.Value,
-                includePrerelease.HasValue());
+                return new SearchOptions(
+                    searchTerm.Value,
+                    includePrerelease.HasValue());
+            }
+            catch (CommandParsingException e)
+            {
+                throw new ArgumentException(e.Message);
+            }
         }
     }
 }
