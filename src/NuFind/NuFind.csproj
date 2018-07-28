@@ -5,13 +5,16 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <AssemblyTitle>NuFind</AssemblyTitle>
-    <Authors>Enrico Campidoglio</Authors>
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <DebugType>portable</DebugType>
     <OutputType>Exe</OutputType>
     <AssemblyName>NuFind</AssemblyName>
+    <AssemblyTitle>NuFind</AssemblyTitle>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <PackageId>NuFind</PackageId>
+    <Authors>Enrico Campidoglio</Authors>
   </PropertyGroup>
 
   <ItemGroup>
