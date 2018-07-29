@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 
-namespace NuFind.Extensions
+namespace NuFind.Search
 {
     internal static class XmlExtensions
     {

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Xml.Linq;
+using NuFind.CommandLine;
 
-namespace NuFind.Extensions
+namespace NuFind.Search
 {
     internal static class NuGetApiExtensions
     {

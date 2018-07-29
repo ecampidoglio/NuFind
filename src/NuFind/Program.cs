@@ -1,4 +1,5 @@
-﻿using NuFind.Extensions;
+﻿using NuFind.CommandLine;
+using NuFind.Search;
 
 namespace NuFind
 {

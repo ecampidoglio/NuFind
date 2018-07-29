@@ -1,6 +1,6 @@
 using System;
 
-namespace NuFind
+namespace NuFind.Search
 {
     internal struct PackageMetadata
     {

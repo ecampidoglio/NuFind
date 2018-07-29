@@ -2,13 +2,14 @@ using System;
 using System.Collections.Generic;
 using CommandLine;
 
-namespace NuFind
+namespace NuFind.CommandLine
 {
     public class SearchOptions
     {
         [Value(0,
             Required = true,
-            HelpText = "The term to search for in the NuGet Gallery.")]
+            MetaName = "search term(s)",
+            HelpText = "One or more terms to search for in the NuGet Gallery.")]
         public string SearchTerm { get; set; }
 
         [Option('p', "prerelease",

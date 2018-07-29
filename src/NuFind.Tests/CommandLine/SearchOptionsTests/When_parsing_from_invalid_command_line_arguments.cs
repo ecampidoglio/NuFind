@@ -1,8 +1,9 @@
 using System;
 using FluentAssertions;
+using NuFind.CommandLine;
 using Xunit;
 
-namespace NuFind.Tests.SearchOptionsTests
+namespace NuFind.Tests.CommandLine.SearchOptionsTests
 {
     public class When_parsing_from_invalid_command_line_arguments
     {
