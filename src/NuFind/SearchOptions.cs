@@ -25,8 +25,7 @@ namespace NuFind
                     return options.Value;
                 case NotParsed<SearchOptions> options:
                     throw new ArgumentException(string.Join("\\n", options.Errors));
-                default:
-                    return default(SearchOptions);
+                default: return default;
             }
         }
     }
