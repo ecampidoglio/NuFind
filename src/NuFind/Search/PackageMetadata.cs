@@ -2,7 +2,7 @@ using System;
 
 namespace NuFind.Search
 {
-    internal struct PackageMetadata
+    public struct PackageMetadata
     {
         public PackageMetadata(
             string id,
