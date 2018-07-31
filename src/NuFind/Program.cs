@@ -7,7 +7,7 @@ namespace NuFind
     {
         public static void Main(string[] args)
         {
-            SearchOptions.Parse(args)
+            Arguments.Parse(args)
                 .SearchPackages()
                 .ParseMetadata()
                 .PrintResults();

@@ -4,7 +4,7 @@ using CommandLine;
 
 namespace NuFind.CommandLine
 {
-    public class SearchOptions
+    public class Arguments
     {
         [Value(0,
             Required = true,
@@ -16,15 +16,15 @@ namespace NuFind.CommandLine
             HelpText = "Indicates whether to include pre-release versions of the package.")]
         public bool IncludePreRelease { get; set; }
 
-        public static SearchOptions Parse(IEnumerable<string> args)
+        public static Arguments Parse(IEnumerable<string> args)
         {
-            var result = Parser.Default.ParseArguments<SearchOptions>(args);
+            var result = Parser.Default.ParseArguments<Arguments>(args);
 
             switch (result)
             {
-                case Parsed<SearchOptions> options:
+                case Parsed<Arguments> options:
                     return options.Value;
-                case NotParsed<SearchOptions> options:
+                case NotParsed<Arguments> options:
                     throw new ArgumentException(string.Join("\\n", options.Errors));
                 default: return default;
             }

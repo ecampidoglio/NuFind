@@ -9,7 +9,7 @@ namespace NuFind.Search
 {
     internal static class NuGetApiExtensions
     {
-        internal static XDocument SearchPackages(this SearchOptions options)
+        internal static XDocument SearchPackages(this Arguments options)
         {
             using (var client = NuGetApiClient())
             {
@@ -45,7 +45,7 @@ namespace NuFind.Search
             };
         }
 
-        private static string ToNuGetSearchQuery(this SearchOptions options)
+        private static string ToNuGetSearchQuery(this Arguments options)
         {
             var includePrerelease = options
                 .IncludePreRelease

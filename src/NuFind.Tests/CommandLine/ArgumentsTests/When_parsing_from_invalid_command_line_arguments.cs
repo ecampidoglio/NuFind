@@ -3,7 +3,7 @@ using FluentAssertions;
 using NuFind.CommandLine;
 using Xunit;
 
-namespace NuFind.Tests.CommandLine.SearchOptionsTests
+namespace NuFind.Tests.CommandLine.ArgumentsTests
 {
     public class When_parsing_from_invalid_command_line_arguments
     {
@@ -13,7 +13,7 @@ namespace NuFind.Tests.CommandLine.SearchOptionsTests
         public void Should_throw_an_argument_exception(
             string option)
         {
-            Action act = () => SearchOptions.Parse(new[] {option});
+            Action act = () => Arguments.Parse(new[] {option});
 
             act.Should().Throw<ArgumentException>();
         }
