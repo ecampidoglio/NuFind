@@ -11,7 +11,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp", includePreRelease: true);
+            var result = sut.Search("Microsoft.CSharp", includePreRelease: true);
 
             result.Should().Contain(package => package.IsPreRelease);
         }

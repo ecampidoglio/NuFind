@@ -8,7 +8,7 @@ namespace NuFind.Search
 {
     public class NuGetPackageFeedV2
     {
-        public IEnumerable<PackageMetadata> FindPackages(string keywords, bool includePreRelease = false)
+        public IEnumerable<PackageMetadata> Search(string keywords, bool includePreRelease = false)
         {
             using (var client = NuGetV2ApiClient())
             {

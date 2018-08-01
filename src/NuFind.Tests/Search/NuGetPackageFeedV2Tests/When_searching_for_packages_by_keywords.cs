@@ -11,7 +11,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp");
+            var result = sut.Search("Microsoft.CSharp");
 
             result.Should().NotBeEmpty().And.NotContainNulls();
         }
@@ -21,7 +21,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp");
+            var result = sut.Search("Microsoft.CSharp");
 
             result.Should().Contain(package => package.Id.Contains("Microsoft.CSharp"));
         }
@@ -31,7 +31,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft");
+            var result = sut.Search("Microsoft");
 
             result.Should().OnlyContain(package => package.Authors.Contains("Microsoft"));
         }
@@ -41,7 +41,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp");
+            var result = sut.Search("Microsoft.CSharp");
 
             result.Should().OnlyContain(package => package.Description != null);
         }
@@ -51,7 +51,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp");
+            var result = sut.Search("Microsoft.CSharp");
 
             result.Should().OnlyContain(package => package.Version != null);
         }
@@ -61,7 +61,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp");
+            var result = sut.Search("Microsoft.CSharp");
 
             result.Should().OnlyContain(package => package.IconUrl != null);
         }
@@ -71,7 +71,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp");
+            var result = sut.Search("Microsoft.CSharp");
 
             result.Should().OnlyContain(package => package.GalleryUrl != null);
         }
@@ -81,7 +81,7 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         {
             var sut = new NuGetPackageFeedV2();
 
-            var result = sut.FindPackages("Microsoft.CSharp");
+            var result = sut.Search("Microsoft.CSharp");
 
             result.Should().NotContain(package => package.IsPreRelease);
         }
