@@ -5,8 +5,10 @@ using NuFind.Search;
 
 namespace NuFind.Output
 {
-    public class AlfredJsonFormat : IFormat
+    public class AlfredJsonFormat : INamedFormat
     {
+        public string Name => "Alfred";
+
         public string Render(IEnumerable<PackageMetadata> packages)
         {
             var results = new

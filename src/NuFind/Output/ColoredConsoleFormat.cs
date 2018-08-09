@@ -5,8 +5,10 @@ using NuFind.Search;
 
 namespace NuFind.Output
 {
-    public class ColoredConsoleFormat : IFormat
+    public class ColoredConsoleFormat : INamedFormat
     {
+        public string Name => "Console";
+
         public string Render(IEnumerable<PackageMetadata> packages)
         {
             var lines = packages.Select(FormatLine);
