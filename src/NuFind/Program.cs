@@ -1,4 +1,5 @@
 ﻿using NuFind.CommandLine;
+using NuFind.Output;
 using NuFind.Search;
 
 namespace NuFind
@@ -7,9 +8,8 @@ namespace NuFind
     {
         public static void Main(string[] args)
         {
-            Arguments.Parse(args)
+            args.Parse()
                 .SearchPackages()
-                .ParseMetadata()
                 .PrintResults();
         }
     }
