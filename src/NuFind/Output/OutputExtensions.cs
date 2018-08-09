@@ -6,7 +6,7 @@ namespace NuFind.Output
     public static class OutputExtensions
     {
         public static void PrintResults(
-            this IEnumerable<PackageMetadata> packages)
+            this IReadOnlyCollection<PackageMetadata> packages)
         {
             new ConsolePrinter().Print(packages);
         }

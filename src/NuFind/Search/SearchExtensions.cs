@@ -5,7 +5,7 @@ namespace NuFind.Search
 {
     public static class SearchExtensions
     {
-        public static IEnumerable<PackageMetadata> SearchPackages(
+        public static IReadOnlyCollection<PackageMetadata> SearchPackages(
             this Arguments arguments)
         {
             return new NuGetPackageFeedV2().Search(
