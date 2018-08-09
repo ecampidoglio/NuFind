@@ -5,12 +5,14 @@ namespace NuFind.Search
 {
     public static class SearchExtensions
     {
-        public static IReadOnlyCollection<PackageMetadata> SearchPackages(
+        public static (IReadOnlyCollection<PackageMetadata>, Arguments) SearchPackages(
             this Arguments arguments)
         {
-            return new NuGetPackageFeedV2().Search(
+            var packages = new NuGetPackageFeedV2().Search(
                 arguments.SearchTerm,
                 arguments.IncludePreRelease);
+
+            return (packages, arguments);
         }
     }
 }
