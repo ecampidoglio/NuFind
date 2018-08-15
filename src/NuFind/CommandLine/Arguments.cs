@@ -6,10 +6,14 @@ namespace NuFind.CommandLine
 {
     public class Arguments
     {
-        public Arguments(string searchTerm, bool includePreRelease)
+        public Arguments(
+            string searchTerm,
+            bool includePreRelease,
+            string format)
         {
             SearchTerm = searchTerm;
             IncludePreRelease = includePreRelease;
+            Format = format;
         }
 
         [Value(0,
@@ -21,6 +25,11 @@ namespace NuFind.CommandLine
         [Option('p', "prerelease",
             HelpText = "Indicates whether to include pre-release versions of the package.")]
         public bool IncludePreRelease { get; }
+
+        [Option('f', "format",
+            HelpText = "Indicates which format to output the results in.",
+            Default = "Console")]
+        public string Format { get; }
 
         public static Arguments Parse(IEnumerable<string> args)
         {
