@@ -9,7 +9,8 @@ namespace NuFind.Output
         public static void PrintResults(
             this (IReadOnlyCollection<PackageMetadata> Packages, Arguments Arguments) context)
         {
-            new ConsolePrinter().Print(context.Packages);
+            Printer.Create(context.Arguments.Format)
+                   .Print(context.Packages);
         }
     }
 }

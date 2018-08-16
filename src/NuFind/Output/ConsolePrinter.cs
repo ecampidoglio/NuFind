@@ -2,8 +2,8 @@
 {
     public class ConsolePrinter : Printer
     {
-        public ConsolePrinter()
-            : base(new ColoredConsoleFormat(), new ConsoleStandardOutput())
+        public ConsolePrinter(IFormat format)
+            : base(format, new ConsoleStandardOutput())
         {
         }
     }
