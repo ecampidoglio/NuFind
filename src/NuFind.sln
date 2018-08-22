@@ -4,9 +4,9 @@ VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6A434953-095D-4A6D-A48B-9D5AF5F491BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuFind", "src\NuFind\NuFind.csproj", "{6F1EF87A-A561-48B8-A3EB-4BB6012B2E98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuFind", "NuFind\NuFind.csproj", "{6F1EF87A-A561-48B8-A3EB-4BB6012B2E98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuFind.Tests", "src\NuFind.Tests\NuFind.Tests.csproj", "{1B378DC9-599A-47E4-B882-317FBF03CF85}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NuFind.Tests", "NuFind.Tests\NuFind.Tests.csproj", "{1B378DC9-599A-47E4-B882-317FBF03CF85}"
 EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
