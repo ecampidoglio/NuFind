@@ -27,13 +27,13 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         }
 
         [Fact]
-        public void Should_only_return_packages_whose_authors_contain_the_keyword()
+        public void Should_return_at_least_one_package_whose_authors_contain_the_keyword()
         {
             var sut = new NuGetPackageFeedV2();
 
             var result = sut.Search("Microsoft");
 
-            result.Should().OnlyContain(package => package.Authors.Contains("Microsoft"));
+            result.Should().Contain(package => package.Authors.Contains("Microsoft"));
         }
 
         [Fact]
