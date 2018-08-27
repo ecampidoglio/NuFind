@@ -1,4 +1,5 @@
-﻿using NuFind.CommandLine;
+﻿using System;
+using NuFind.CommandLine;
 using NuFind.Output;
 using NuFind.Search;
 
@@ -6,11 +7,20 @@ namespace NuFind
 {
     public static class Program
     {
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
-            args.Parse()
-                .SearchPackages()
-                .PrintResults();
+            try
+            {
+                args.Parse()
+                    .SearchPackages()
+                    .PrintResults();
+
+                return ExitStatus.Success;
+            }
+            catch (ArgumentException)
+            {
+                return ExitStatus.UsageError;
+            }
         }
     }
 }
