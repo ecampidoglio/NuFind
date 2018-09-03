@@ -26,6 +26,7 @@ namespace NuFind.Output
                 subtitle = $"{p.Version} • {p.Authors}",
                 arg = ClipboardText(p),
                 autocomplete = p.Id,
+                quicklookurl = p.GalleryUrl.AbsoluteUri,
                 icon = new
                 {
                     path = "icon.png"

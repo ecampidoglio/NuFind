@@ -49,5 +49,15 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
 
             result.Should().Contain($"\"autocomplete\":\"{package.Id}\"");
         }
+
+        [Theory, InlineAutoData]
+        public void Should_return_a_string_containing_the_package_gallery_url_for_quicklook(
+            PackageMetadata package,
+            AlfredJsonFormat sut)
+        {
+            var result = sut.Render(new[] { package });
+
+            result.Should().Contain($"\"quicklookurl\":\"{package.GalleryUrl}\"");
+        }
     }
 }
