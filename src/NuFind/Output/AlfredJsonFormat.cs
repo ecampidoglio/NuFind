@@ -27,6 +27,10 @@ namespace NuFind.Output
                 arg = ClipboardText(p),
                 autocomplete = p.Id,
                 quicklookurl = p.GalleryUrl.AbsoluteUri,
+                text = new
+                {
+                    copy = ClipboardText(p)
+                },
                 icon = new
                 {
                     path = "icon.png"

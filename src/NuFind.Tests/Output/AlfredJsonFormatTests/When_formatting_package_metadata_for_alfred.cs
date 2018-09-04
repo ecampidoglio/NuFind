@@ -41,6 +41,18 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
         }
 
         [Theory, InlineAutoData]
+        public void Should_return_a_string_containing_the_msbuild_package_reference_as_the_text_to_copy(
+            PackageMetadata package,
+            AlfredJsonFormat sut)
+        {
+            var result = sut.Render(new[] { package });
+
+            result
+                .Should()
+                .Contain($"\"copy\":\"<PackageReference Include=\\\"{package.Id}\\\" Version=\\\"{package.Version}\\\" />\"");
+        }
+
+        [Theory, InlineAutoData]
         public void Should_return_a_string_containing_the_package_id_for_autocomplete(
             PackageMetadata package,
             AlfredJsonFormat sut)
