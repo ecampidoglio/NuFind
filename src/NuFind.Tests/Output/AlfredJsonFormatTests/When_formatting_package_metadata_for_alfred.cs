@@ -71,5 +71,15 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
 
             result.Should().Contain($"\"quicklookurl\":\"{package.GalleryUrl}\"");
         }
+
+        [Theory, InlineAutoData]
+        public void Should_return_a_string_containing_the_package_gallery_url_as_command_argument(
+            PackageMetadata package,
+            AlfredJsonFormat sut)
+        {
+            var result = sut.Render(new[] { package });
+
+            result.Should().Contain($"\"cmd\":{{\"valid\":true,\"arg\":\"{package.GalleryUrl}\",\"subtitle\":\"{package.GalleryUrl}\"}}");
+        }
     }
 }

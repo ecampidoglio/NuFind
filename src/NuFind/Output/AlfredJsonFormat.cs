@@ -31,6 +31,15 @@ namespace NuFind.Output
                 {
                     copy = ClipboardText(p)
                 },
+                mods = new
+                {
+                    cmd = new
+                    {
+                        valid = true,
+                        arg = p.GalleryUrl.AbsoluteUri,
+                        subtitle = p.GalleryUrl.AbsoluteUri
+                    }
+                },
                 icon = new
                 {
                     path = "icon.png"
