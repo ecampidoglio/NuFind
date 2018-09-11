@@ -19,13 +19,13 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
         }
 
         [Theory, InlineAutoData]
-        public void Should_return_a_string_containing_the_package_version_and_authors_as_subtitle(
+        public void Should_return_a_string_containing_the_package_description_as_subtitle(
             PackageMetadata package,
             AlfredJsonFormat sut)
         {
             var result = sut.Render(new[] { package });
 
-            result.Should().Contain($"\"subtitle\":\"{package.Version} • {package.Authors}\"");
+            result.Should().Contain($"\"subtitle\":\"{package.Description}\"");
         }
 
         [Theory, InlineAutoData]

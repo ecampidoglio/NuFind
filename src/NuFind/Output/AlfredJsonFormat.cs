@@ -23,7 +23,7 @@ namespace NuFind.Output
             new
             {
                 title = p.Id,
-                subtitle = $"{p.Version} • {p.Authors}",
+                subtitle = p.Description,
                 arg = ClipboardText(p),
                 autocomplete = p.Id,
                 quicklookurl = p.GalleryUrl.AbsoluteUri,
