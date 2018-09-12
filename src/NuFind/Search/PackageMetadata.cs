@@ -8,7 +8,7 @@ namespace NuFind.Search
             string id,
             string version,
             string authors,
-            string description = null,
+            string description,
             Uri iconUrl = null,
             Uri galleryUrl = null,
             bool isPreRelease = false)
