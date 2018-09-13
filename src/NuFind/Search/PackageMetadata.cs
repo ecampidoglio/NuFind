@@ -9,6 +9,7 @@ namespace NuFind.Search
             string version,
             string authors,
             string description,
+            long downloadCount,
             Uri iconUrl = null,
             Uri galleryUrl = null,
             bool isPreRelease = false)
@@ -17,6 +18,7 @@ namespace NuFind.Search
             Version = version;
             Authors = authors;
             Description = description;
+            DownloadCount = downloadCount;
             IconUrl = iconUrl;
             GalleryUrl = galleryUrl;
             IsPreRelease = isPreRelease;
@@ -29,6 +31,8 @@ namespace NuFind.Search
         public string Authors { get; }
 
         public string Description { get; }
+
+        public long DownloadCount { get; }
 
         public Uri IconUrl { get; }
 
