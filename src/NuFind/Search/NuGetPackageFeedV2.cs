@@ -35,6 +35,7 @@ namespace NuFind.Search
                         (string)node.Element(ds + "Version"),
                         (string)node.Element(ds + "Authors"),
                         (string)node.Element(ds + "Description"),
+                        (long)node.Element(ds + "DownloadCount"),
                         new Uri(node.Element(ds + "IconUrl").ValueOrDefault(
                             "https://www.nuget.org/Content/gallery/img/default-package-icon.svg")),
                         new Uri((string)node.Element(ds + "GalleryDetailsUrl")),

@@ -47,6 +47,16 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
         }
 
         [Fact]
+        public void Should_include_the_download_count_in_the_returned_packages()
+        {
+            var sut = new NuGetPackageFeedV2();
+
+            var result = sut.Search("Microsoft.CSharp");
+
+            result.Should().OnlyContain(package => package.DownloadCount > 0);
+        }
+
+        [Fact]
         public void Should_include_the_version_in_the_returned_packages()
         {
             var sut = new NuGetPackageFeedV2();
