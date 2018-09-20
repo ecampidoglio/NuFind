@@ -81,5 +81,15 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
 
             result.Should().Contain($"\"cmd\":{{\"valid\":true,\"arg\":\"{package.GalleryUrl}\",\"subtitle\":\"{package.GalleryUrl}\"}}");
         }
+
+        [Theory, InlineAutoData]
+        public void Should_return_a_string_containing_the_package_version_and_authors_and_download_count_as_option_argument(
+            PackageMetadata package,
+            AlfredJsonFormat sut)
+        {
+            var result = sut.Render(new[] { package });
+
+            result.Should().Contain($"\"alt\":{{\"valid\":true,\"arg\":\"{package.Version} • {package.Authors} • {package.DownloadCount}\",\"subtitle\":\"{package.Version} • {package.Authors} • {package.DownloadCount}\"}}");
+        }
     }
 }

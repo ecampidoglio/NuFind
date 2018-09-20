@@ -33,6 +33,12 @@ namespace NuFind.Output
                 },
                 mods = new
                 {
+                    alt = new
+                    {
+                        valid = true,
+                        arg = $"{p.Version} • {p.Authors} • {p.DownloadCount}",
+                        subtitle = $"{p.Version} • {p.Authors} • {p.DownloadCount}"
+                    },
                     cmd = new
                     {
                         valid = true,
