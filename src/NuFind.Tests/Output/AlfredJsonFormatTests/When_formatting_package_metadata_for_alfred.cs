@@ -79,7 +79,7 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
         {
             var result = sut.Render(new[] { package });
 
-            result.Should().Contain($"\"cmd\":{{\"valid\":true,\"arg\":\"{package.GalleryUrl}\",\"subtitle\":\"{package.GalleryUrl}\"}}");
+            result.Should().Contain($"\"cmd\":{{\"valid\":true,\"arg\":\"{package.GalleryUrl}\",\"subtitle\":\"Go to {package.GalleryUrl}\"}}");
         }
 
         [Theory, InlineAutoData]

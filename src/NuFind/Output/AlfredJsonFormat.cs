@@ -43,7 +43,7 @@ namespace NuFind.Output
                     {
                         valid = true,
                         arg = p.GalleryUrl.AbsoluteUri,
-                        subtitle = p.GalleryUrl.AbsoluteUri
+                        subtitle = $"Go to {p.GalleryUrl.AbsoluteUri}"
                     }
                 },
                 icon = new
