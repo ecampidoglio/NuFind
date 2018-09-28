@@ -89,7 +89,7 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
         {
             var result = sut.Render(new[] { package });
 
-            result.Should().Contain($"\"alt\":{{\"valid\":true,\"arg\":\"{package.Version} • {package.Authors} • {package.DownloadCount}\",\"subtitle\":\"{package.Version} • {package.Authors} • {package.DownloadCount}\"}}");
+            result.Should().Contain($"\"alt\":{{\"valid\":true,\"arg\":\"{package.Version} • {package.Authors} • {package.DownloadCount} downloads\",\"subtitle\":\"{package.Version} • {package.Authors} • {package.DownloadCount} downloads\"}}");
         }
     }
 }

@@ -36,8 +36,8 @@ namespace NuFind.Output
                     alt = new
                     {
                         valid = true,
-                        arg = $"{p.Version} • {p.Authors} • {p.DownloadCount}",
-                        subtitle = $"{p.Version} • {p.Authors} • {p.DownloadCount}"
+                        arg = $"{p.Version} • {p.Authors} • {p.DownloadCount} downloads",
+                        subtitle = $"{p.Version} • {p.Authors} • {p.DownloadCount} downloads"
                     },
                     cmd = new
                     {
