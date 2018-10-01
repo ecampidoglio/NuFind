@@ -1,4 +1,5 @@
-﻿using AutoFixture.Xunit2;
+﻿using System.ComponentModel.DataAnnotations;
+using AutoFixture.Xunit2;
 using FluentAssertions;
 using NuFind.Output;
 using NuFind.Search;
@@ -90,6 +91,17 @@ namespace NuFind.Tests.Output.AlfredJsonFormatTests
             var result = sut.Render(new[] { package });
 
             result.Should().Contain($"\"alt\":{{\"valid\":true,\"arg\":\"{package.Version} • {package.Authors} • {package.DownloadCount} downloads\",\"subtitle\":\"{package.Version} • {package.Authors} • {package.DownloadCount} downloads\"}}");
+        }
+
+        [Theory, InlineAutoData]
+        public void Should_format_the_download_count_using_the_current_culture_number_format(
+            [Frozen(Matching.MemberName),Range(1000, 100000)]long downloadCount,
+            PackageMetadata package,
+            AlfredJsonFormat sut)
+        {
+            var result = sut.Render(new[] { package });
+
+            result.Should().Contain($"{downloadCount:N0}");
         }
     }
 }
