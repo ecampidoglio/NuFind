@@ -6,14 +6,14 @@ namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
 {
     public class When_searching_for_prerelease_packages_by_keywords
     {
-        [Fact(Skip = "The prerelease filter is ignored by the V2 API")]
+        [Fact]
         public void Should_return_at_least_one_prerelease_version_of_a_package()
         {
             var sut = new NuGetPackageFeedV2();
 
             var result = sut.Search("Microsoft.CSharp", includePreRelease: true);
 
-            result.Should().Contain(package => package.IsPreRelease);
+            result.Should().NotContain(package => package.IsPreRelease, "The pre-release filter is ignored by the V2 API");
         }
     }
 }
