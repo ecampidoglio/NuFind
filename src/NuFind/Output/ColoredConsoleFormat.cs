@@ -16,8 +16,8 @@ namespace NuFind.Output
         }
 
         private static string FormatLine(PackageMetadata p) =>
-            $"{p.Id} → " +
-            $"{(p.IsPreRelease ? AnsiColors.Red : AnsiColors.Green)}{p.Version}{AnsiColors.Reset} " +
+            $"{p.Id} " +
+            $"=> {(p.IsPreRelease ? AnsiColors.Red : AnsiColors.Green)}{p.Version}{AnsiColors.Reset} " +
             $"{AnsiColors.Cyan}({p.Authors}){AnsiColors.Reset}" +
             Environment.NewLine;
 
