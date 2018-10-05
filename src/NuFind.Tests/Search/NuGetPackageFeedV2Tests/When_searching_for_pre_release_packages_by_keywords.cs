@@ -4,10 +4,10 @@ using Xunit;
 
 namespace NuFind.Tests.Search.NuGetPackageFeedV2Tests
 {
-    public class When_searching_for_prerelease_packages_by_keywords
+    public class When_searching_for_pre_release_packages_by_keywords
     {
         [Fact]
-        public void Should_return_at_least_one_prerelease_version_of_a_package()
+        public void Should_return_at_least_one_pre_release_version_of_a_package()
         {
             var sut = new NuGetPackageFeedV2();
 
