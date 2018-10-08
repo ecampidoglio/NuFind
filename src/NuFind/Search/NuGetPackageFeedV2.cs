@@ -18,8 +18,8 @@ namespace NuFind.Search
             }
         }
 
-        private static WebClient NuGetV2ApiClient() =>
-            new WebClient { BaseAddress = "https://www.nuget.org/api/v2/" };
+        private static WebClient NuGetV2ApiClient()
+            => new WebClient { BaseAddress = "https://www.nuget.org/api/v2/" };
 
         private static IReadOnlyCollection<PackageMetadata> Parse(string feed)
         {
