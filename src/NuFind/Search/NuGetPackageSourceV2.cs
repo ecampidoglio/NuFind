@@ -6,7 +6,7 @@ using System.Xml.Linq;
 
 namespace NuFind.Search
 {
-    public class NuGetPackageFeedV2
+    public class NuGetPackageSourceV2
     {
         public IReadOnlyCollection<PackageMetadata> Search(string keywords, bool includePreRelease = false)
         {

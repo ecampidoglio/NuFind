@@ -8,7 +8,7 @@ namespace NuFind.Search
         public static (IReadOnlyCollection<PackageMetadata>, Arguments) SearchPackages(
             this Arguments arguments)
         {
-            var packages = new NuGetPackageFeedV2().Search(
+            var packages = new NuGetPackageSourceV2().Search(
                 arguments.SearchTerm,
                 arguments.IncludePreRelease);
 
