@@ -4,7 +4,7 @@ using Xunit;
 
 namespace NuFind.Tests.Search.NuGetPackageSourceV2Tests
 {
-    public class When_searching_for_packages_by_keywords
+    public class When_searching_for_packages_by_keywords_using_v2
     {
         [Fact]
         public void Should_return_at_least_one_package()
