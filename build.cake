@@ -30,11 +30,6 @@ Task("Compile")
         Configuration = configuration
     };
 
-    if (IsRunningOnUnix())
-    {
-        settings.Framework = "netcoreapp2.0";
-    }
-
     DotNetCoreBuild(Paths.ProjectFile.FullPath, settings);
 });
 
@@ -61,11 +56,6 @@ Task("Test")
     {
         Configuration = configuration
     };
-
-    if (IsRunningOnUnix())
-    {
-        settings.Framework = "netcoreapp2.0";
-    }
 
     DotNetCoreTest(Paths.TestProjectFile.FullPath, settings);
 });
