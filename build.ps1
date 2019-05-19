@@ -40,7 +40,6 @@ Param(
     [string]$Configuration = "Debug",
     [string]$PackageOutputDirectory = "dist",
     [string]$PackageVersion = "",
-    [string]$PackageFilePath = "",
     [ValidateSet("Quiet", "Minimal", "Normal", "Verbose", "Diagnostic")]
     [string]$Verbosity = "Verbose"
 )

@@ -5,7 +5,6 @@ var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
 var packageOutputDirectory = Argument("packageOutputDirectory", "dist");
 var packageVersion = Argument("packageVersion", string.Empty);
-var packageFilePath = Argument("packageFilePath", string.Empty);
 
 Task("Clean")
     .Does(() =>
