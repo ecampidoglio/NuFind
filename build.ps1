@@ -23,8 +23,6 @@ The build configuration to use.
 The path of the directory where to put the packages produced by the build script.
 .PARAMETER PackageVersion
 The version of the packages produced by the build script.
-.PARAMETER PackageFilePath
-The path of the package to deploy.
 .PARAMETER Verbosity
 Specifies the amount of information to be displayed.
 
@@ -107,5 +105,5 @@ if (!(Test-Path $CAKE_EXE)) {
 
 # Start Cake
 Write-Host "Running build script..."
-Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -experimental -target=`"$Target`" -configuration=`"$Configuration`" -packageOutputDirectory=`"$PackageOutputDirectory`" -packageVersion=`"$PackageVersion`" -packageFilePath=`"$PackageFilePath`" -verbosity=`"$Verbosity`""
+Invoke-Expression "& `"$CAKE_EXE`" `"$Script`" -experimental -target=`"$Target`" -configuration=`"$Configuration`" -packageOutputDirectory=`"$PackageOutputDirectory`" -packageVersion=`"$PackageVersion`" -verbosity=`"$Verbosity`""
 exit $LASTEXITCODE
