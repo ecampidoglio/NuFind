@@ -1,15 +1,21 @@
+#load build/package.cake
 #load build/paths.cake
 #load build/version.cake
 
 var target = Argument("target", "Default");
 var configuration = Argument("configuration", "Release");
-var packageOutputDirectory = Argument("packageOutputDirectory", "dist");
-var packageVersion = Argument("packageVersion", string.Empty);
+
+Setup<PackageMetadata>(context =>
+    new PackageMetadata(
+        outputDirectory: Argument("packageOutputPath", "dist"),
+        version: Argument("packageVersion", string.Empty),
+        name: "NuFind")
+);
 
 Task("Clean")
-    .Does(() =>
+    .Does<PackageMetadata>(package =>
 {
-    CleanDirectory(packageOutputDirectory);
+    CleanDirectory(package.OutputDirectory);
     CleanDirectories("**/bin");
     CleanDirectories("**/obj");
 });
@@ -33,17 +39,16 @@ Task("Compile")
 });
 
 Task("Version")
-    .Does(() =>
+    .Does<PackageMetadata>(package =>
 {
-    if (string.IsNullOrEmpty(packageVersion))
+    if (string.IsNullOrEmpty(package.Version))
     {
-        packageVersion = GetVersionFromProjectFile(Context, Paths.ProjectFile);
-        Information($"Determined version {packageVersion} from the project file");
+        package.Version = GetVersionFromProjectFile(Context, Paths.ProjectFile);
+        Information($"Determined version {package.Version} from the project file");
     }
     else
     {
-        SetVersionToProjectFile(Context, Paths.ProjectFile, packageVersion);
-        Information($"Assigned version {packageVersion} to the project file");
+        Information($"Using version {package.Version} specified as argument");
     }
 });
 
@@ -62,13 +67,13 @@ Task("Test")
 Task("Package")
     .IsDependentOn("Restore-Packages")
     .IsDependentOn("Version")
-    .Does(() =>
+    .Does<PackageMetadata>(package =>
 {
     DotNetCorePack(
         Paths.ProjectFile.FullPath,
         new DotNetCorePackSettings
         {
-            OutputDirectory = packageOutputDirectory,
+            OutputDirectory = package.OutputDirectory,
             Configuration = configuration
         });
 });
