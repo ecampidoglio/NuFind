@@ -20,14 +20,7 @@ Task("Clean")
     CleanDirectories("**/obj");
 });
 
-Task("Restore-Packages")
-    .Does(() =>
-{
-    DotNetCoreRestore(Paths.SolutionFile.FullPath);
-});
-
 Task("Compile")
-    .IsDependentOn("Restore-Packages")
     .Does(() =>
 {
     var settings = new DotNetCoreBuildSettings
@@ -53,7 +46,6 @@ Task("Version")
 });
 
 Task("Test")
-    .IsDependentOn("Restore-Packages")
     .Does(() =>
 {
     var settings = new DotNetCoreTestSettings
@@ -65,7 +57,6 @@ Task("Test")
 });
 
 Task("Package")
-    .IsDependentOn("Restore-Packages")
     .IsDependentOn("Version")
     .Does<PackageMetadata>(package =>
 {
